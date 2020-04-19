@@ -6,7 +6,10 @@ export default class GradeSchool {
   }
 
   addStudent(name: string, grade: number) {
-    const map = this.studentRoster().set(grade.toString(), [name])
+    const gradeStr = grade.toString();
+    const map = this.studentRoster();
+    const students = map.get(gradeStr) || [];
+    map.set(gradeStr, [...students, name]);
     this.studentRoster = () => map;
   }
 }
