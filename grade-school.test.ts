@@ -27,22 +27,22 @@ describe('School', () => {
     expect(gradeSchool.studentRoster()).toEqual(expectedDb)
   })
 
-  // xit('adding students to different grades adds them to the roster', () => {
-  //   gradeSchool.addStudent('Chelsea', 3)
-  //   gradeSchool.addStudent('Logan', 7)
+  it('adding students to different grades adds them to the roster', () => {
+    gradeSchool.addStudent('Chelsea', 3)
+    gradeSchool.addStudent('Logan', 7)
 
-  //   const expectedDb = new Map(Object.entries({ 3 : [ 'Chelsea' ], 7 : [ 'Logan'] }))
-  //   expect(gradeSchool.studentRoster()).toEqual(expectedDb)
-  // })
+    const expectedDb = new Map(Object.entries({ 3 : [ 'Chelsea' ], 7 : [ 'Logan'] }))
+    expect(gradeSchool.studentRoster()).toEqual(expectedDb)
+  })
 
-  // xit('grade returns the students in that grade in alphabetical order', () => {
-  //   gradeSchool.addStudent('Franklin', 5)
-  //   gradeSchool.addStudent('Bradley', 5)
-  //   gradeSchool.addStudent('Jeff', 1)
+  it('grade returns the students in that grade in alphabetical order', () => {
+    gradeSchool.addStudent('Franklin', 5)
+    gradeSchool.addStudent('Bradley', 5)
+    gradeSchool.addStudent('Jeff', 1)
 
-  //   const expectedStudents = [ 'Bradley', 'Franklin' ]
-  //   expect(gradeSchool.studentsInGrade(5)).toEqual(expectedStudents)
-  // })
+    const expectedStudents = [ 'Bradley', 'Franklin' ]
+    expect(gradeSchool.studentsInGrade(5)).toEqual(expectedStudents)
+  })
 
   // xit('grade returns an empty array if there are no students in that grade', () => {
   //   expect(gradeSchool.studentsInGrade(1)).toEqual([])
