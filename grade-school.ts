@@ -9,7 +9,7 @@ export default class GradeSchool {
     const gradeStr = grade.toString();
     const map = this.studentRoster();
     const students = map.get(gradeStr) || [];
-    map.set(gradeStr, [...students, name]);
+    map.set(gradeStr, [...students, name].sort());
     this.studentRoster = () => map;
   }
 

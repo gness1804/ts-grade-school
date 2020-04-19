@@ -44,23 +44,23 @@ describe('School', () => {
     expect(gradeSchool.studentsInGrade(5)).toEqual(expectedStudents)
   })
 
-  // xit('grade returns an empty array if there are no students in that grade', () => {
-  //   expect(gradeSchool.studentsInGrade(1)).toEqual([])
-  // })
+  it('grade returns an empty array if there are no students in that grade', () => {
+    expect(gradeSchool.studentsInGrade(1)).toEqual([])
+  })
 
-  // xit('the students names in each grade in the roster are sorted', () => {
-  //   gradeSchool.addStudent('Jennifer', 4)
-  //   gradeSchool.addStudent('Kareem', 6)
-  //   gradeSchool.addStudent('Christopher', 4)
-  //   gradeSchool.addStudent('Kyle', 3)
+  it('the students names in each grade in the roster are sorted', () => {
+    gradeSchool.addStudent('Jennifer', 4)
+    gradeSchool.addStudent('Kareem', 6)
+    gradeSchool.addStudent('Christopher', 4)
+    gradeSchool.addStudent('Kyle', 3)
 
-  //   const expectedSortedStudents = new Map(Object.entries({
-  //     3 : ['Kyle'],
-  //     4 : ['Christopher', 'Jennifer'],
-  //     6 : ['Kareem']
-  //   }))
-  //   expect(gradeSchool.studentRoster()).toEqual(expectedSortedStudents)
-  // })
+    const expectedSortedStudents = new Map(Object.entries({
+      3 : ['Kyle'],
+      4 : ['Christopher', 'Jennifer'],
+      6 : ['Kareem']
+    }))
+    expect(gradeSchool.studentRoster()).toEqual(expectedSortedStudents)
+  })
 
   // xit('roster cannot be modified outside of module', () => {
   //   gradeSchool.addStudent('Aimee', 2)
