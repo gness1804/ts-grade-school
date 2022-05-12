@@ -8,7 +8,7 @@ export class GradeSchool {
         this.rosterObj[grade] = this.rosterObj[grade].sort();
       }
     }
-    return this.rosterObj;
+    return JSON.parse(JSON.stringify(this.rosterObj));
   }
 
   add(name: string, grade: number): void {
@@ -29,7 +29,7 @@ export class GradeSchool {
   }
 
   grade(grade: number): string[] {
-    const res = this.rosterObj[grade] || [];
+    const res = this.roster()[grade] || [];
     return res.sort();
   }
 }
