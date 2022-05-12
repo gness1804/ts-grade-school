@@ -13,6 +13,7 @@ export class GradeSchool {
   }
 
   grade(grade: number): string[] {
-    throw new Error('Remove this statement and implement this function')
+    const res = this.rosterObj[grade] || [];
+    return res.sort();
   }
 }
