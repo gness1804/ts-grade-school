@@ -62,20 +62,20 @@ describe('School', () => {
     expect(gradeSchool.studentRoster()).toEqual(expectedSortedStudents)
   })
 
-  // xit('roster cannot be modified outside of module', () => {
-  //   gradeSchool.addStudent('Aimee', 2)
-  //   const roster = gradeSchool.studentRoster()
-  //   const result = roster.get('2') || []
-  //   result.push('Oops.')
-  //   const expectedDb = new Map(Object.entries({ 2 : [ 'Aimee' ] }))
-  //   expect(gradeSchool.studentRoster()).toEqual(expectedDb)
-  // })
+  it('roster cannot be modified outside of module', () => {
+    gradeSchool.addStudent('Aimee', 2)
+    const roster = gradeSchool.studentRoster()
+    const result = roster.get('2') || []
+    result.push('Oops.')
+    const expectedDb = new Map(Object.entries({ 2 : [ 'Aimee' ] }))
+    expect(gradeSchool.studentRoster()).toEqual(expectedDb)
+  })
 
-  // xit('roster cannot be modified outside of module using studentsInGrade()', () => {
-  //   gradeSchool.addStudent('Aimee', 2)
-  //   gradeSchool.studentsInGrade(2).push('Oops.')
-  //   const expectedDb = new Map(Object.entries({ 2 : [ 'Aimee' ] }))
-  //   expect(gradeSchool.studentRoster()).toEqual(expectedDb)
-  // })
+  it('roster cannot be modified outside of module using studentsInGrade()', () => {
+    gradeSchool.addStudent('Aimee', 2)
+    gradeSchool.studentsInGrade(2).push('Oops.')
+    const expectedDb = new Map(Object.entries({ 2 : [ 'Aimee' ] }))
+    expect(gradeSchool.studentRoster()).toEqual(expectedDb)
+  })
 
 })
