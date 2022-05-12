@@ -1,6 +1,11 @@
 export class GradeSchool {
   rosterObj: { [grade: number]: string[] } = {};
   roster(): { [grade: number]: string[] } {
+    for (const grade in this.rosterObj) {
+      if (Object.prototype.hasOwnProperty.call(this.rosterObj, grade)) {
+        this.rosterObj[grade] = this.rosterObj[grade].sort();
+      }
+    }
     return this.rosterObj;
   }
 
