@@ -1,6 +1,8 @@
+type Roster = { [grade: number]: string[] };
+
 export class GradeSchool {
-  rosterObj: { [grade: number]: string[] } = {};
-  roster(): { [grade: number]: string[] } {
+  rosterObj: Roster = {};
+  roster(): Roster {
     for (const grade in this.rosterObj) {
       if (Object.prototype.hasOwnProperty.call(this.rosterObj, grade)) {
         this.rosterObj[grade] = this.rosterObj[grade].sort();
