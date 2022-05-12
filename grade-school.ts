@@ -29,7 +29,6 @@ export class GradeSchool {
   }
 
   grade(grade: number): string[] {
-    const res = this.roster()[grade] || [];
-    return res.sort();
+    return this.roster()[grade] || [];
   }
 }
